@@ -189,185 +189,172 @@ proxy-groups:
 - name: 国外网站
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: 国内网站
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: Google
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: GoogleVoice
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: YouTube
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: YouTubeMusic
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: GoogleFCM
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: 苹果服务
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: Amazon
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: Github
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: OpenAI
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: 巴姆哈特
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: Twitter
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: Telegram
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: PayPal
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: Netflix
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: Nintendo
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: 微软服务
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: 哔哩哔哩
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
+    - DIRECT
 - name: Bobby
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: apiopenai
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: HoYoGames
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: 游戏平台
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: 漏网之鱼
   type: select
   proxies:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+    - 美国节点
+    - 香港节点
+    - 新加坡节点
+    - 台湾节点
 - name: 美国节点
   type: select
   proxies: []
