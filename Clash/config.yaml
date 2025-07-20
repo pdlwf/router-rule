@@ -1,0 +1,400 @@
+rule-providers:
+  rule_0:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/pdlwf/router-rule/main/Clash/Rule/bobby_customize.yaml
+    path: ./ruleset/rule_0.yaml
+    interval: 86400
+  rule_1:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/pdlwf/router-rule/main/Clash/Rule/platform-openai.yaml
+    path: ./ruleset/rule_1.yaml
+    interval: 86400
+  rule_2:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    path: ./ruleset/rule_2.yaml
+    interval: 86400
+  rule_3:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bahamut/Bahamut.yaml
+    path: ./ruleset/rule_3.yaml
+    interval: 86400
+  rule_4:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml
+    path: ./ruleset/rule_4.yaml
+    interval: 86400
+  rule_5:
+    type: http
+    behavior: domain
+    url: clash-ipcidr:https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt
+    path: ./ruleset/rule_5.yaml
+    interval: 86400
+  rule_6:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Amazon/Amazon.yaml
+    path: ./ruleset/rule_6.yaml
+    interval: 86400
+  rule_7:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+    path: ./ruleset/rule_7.yaml
+    interval: 86400
+  rule_8:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.yaml
+    path: ./ruleset/rule_8.yaml
+    interval: 86400
+  rule_9:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.yaml
+    path: ./ruleset/rule_9.yaml
+    interval: 86400
+  rule_10:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix_Classical.yaml
+    path: ./ruleset/rule_10.yaml
+    interval: 86400
+  rule_11:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml
+    path: ./ruleset/rule_11.yaml
+    interval: 86400
+  rule_12:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    path: ./ruleset/rule_12.yaml
+    interval: 86400
+  rule_13:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleVoice/GoogleVoice.yaml
+    path: ./ruleset/rule_13.yaml
+    interval: 86400
+  rule_14:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+    path: ./ruleset/rule_14.yaml
+    interval: 86400
+  rule_15:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleFCM/GoogleFCM.yaml
+    path: ./ruleset/rule_15.yaml
+    interval: 86400
+  rule_16:
+    type: http
+    behavior: domain
+    url: clash-domain:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Domain.yaml
+    path: ./ruleset/rule_16.yaml
+    interval: 86400
+  rule_17:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+    path: ./ruleset/rule_17.yaml
+    interval: 86400
+  rule_18:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml
+    path: ./ruleset/rule_18.yaml
+    interval: 86400
+  rule_19:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/Infatuation-Fei/rule/main/Clash/Rule/HoYoGames.yaml
+    path: ./ruleset/rule_19.yaml
+    interval: 86400
+  rule_20:
+    type: http
+    behavior: domain
+    url: clash-classic:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
+    path: ./ruleset/rule_20.yaml
+    interval: 86400
+  rule_21:
+    type: http
+    behavior: domain
+    url: clash-domain:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Proxy/Proxy_Domain.yaml
+    path: ./ruleset/rule_21.yaml
+    interval: 86400
+  rule_22:
+    type: http
+    behavior: domain
+    url: clash-domain:https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Domain.yaml
+    path: ./ruleset/rule_22.yaml
+    interval: 86400
+  rule_23:
+    type: http
+    behavior: domain
+    url: '[]GEOIP,LAN'
+    path: ./ruleset/rule_23.yaml
+    interval: 86400
+  rule_24:
+    type: http
+    behavior: domain
+    url: '[]GEOIP,CN'
+    path: ./ruleset/rule_24.yaml
+    interval: 86400
+  rule_25:
+    type: http
+    behavior: domain
+    url: '[]FINAL'
+    path: ./ruleset/rule_25.yaml
+    interval: 86400
+rules:
+- RULE-SET,rule_0,Bobby
+- RULE-SET,rule_1,apiopenai
+- RULE-SET,rule_2,OpenAI
+- RULE-SET,rule_3,巴姆哈特
+- RULE-SET,rule_4,Twitter
+- RULE-SET,rule_5,Telegram
+- RULE-SET,rule_6,Amazon
+- RULE-SET,rule_7,Github
+- RULE-SET,rule_8,PayPal
+- RULE-SET,rule_9,Nintendo
+- RULE-SET,rule_10,Netflix
+- RULE-SET,rule_11,YouTubeMusic
+- RULE-SET,rule_12,YouTube
+- RULE-SET,rule_13,GoogleVoice
+- RULE-SET,rule_14,GoogleFCM
+- RULE-SET,rule_15,Google
+- RULE-SET,rule_16,苹果服务
+- RULE-SET,rule_17,微软服务
+- RULE-SET,rule_18,哔哩哔哩
+- RULE-SET,rule_19,HoYoGames
+- RULE-SET,rule_20,游戏平台
+- RULE-SET,rule_21,国外网站
+- RULE-SET,rule_22,国内网站
+- RULE-SET,rule_23,DIRECT
+- RULE-SET,rule_24,国内网站
+- RULE-SET,rule_25,漏网之鱼
+proxy-groups:
+- name: 手动切换
+  type: select
+  proxies: []
+- name: 国外网站
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: 国内网站
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: Google
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+- name: GoogleVoice
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+- name: YouTube
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: YouTubeMusic
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+- name: GoogleFCM
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+- name: 苹果服务
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+- name: Amazon
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+- name: Github
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: OpenAI
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: 巴姆哈特
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+- name: Twitter
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: Telegram
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: PayPal
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+- name: Netflix
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+- name: Nintendo
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+- name: 微软服务
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: 哔哩哔哩
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: Bobby
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+- name: apiopenai
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: HoYoGames
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: 游戏平台
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: 漏网之鱼
+  type: select
+  proxies:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+- name: 美国节点
+  type: select
+  proxies: []
+- name: 香港节点
+  type: select
+  proxies: []
+- name: 新加坡节点
+  type: select
+  proxies: []
+- name: 日本节点
+  type: select
+  proxies: []
+- name: 台湾节点
+  type: select
+  proxies: []
+- name: 韩国节点
+  type: select
+  proxies: []
+- name: 加拿大节点
+  type: select
+  proxies: []
+- name: 印度节点
+  type: select
+  proxies: []
+- name: 俄罗斯节点
+  type: select
+  proxies: []
+- name: 快速节点
+  type: select
+  proxies: []
