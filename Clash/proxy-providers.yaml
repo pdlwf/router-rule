@@ -1,0 +1,234 @@
+# ===== OpenClash 主配置：黑矩阵规则 + 订阅自动转换 =====
+mixed-port: 7890
+allow-lan: true
+bind-address: "*"
+mode: rule
+log-level: info
+ipv6: true
+unified-delay: true
+tcp-concurrent: true
+
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.1/8
+  default-nameserver: [223.5.5.5, 1.1.1.1]
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://cloudflare-dns.com/dns-query
+  fallback:
+    - https://dns.google/dns-query
+    - https://1.1.1.1/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+
+proxy-providers:
+  my-sub:
+    type: http
+    path: ./providers/proxy/my-sub.yaml
+    # ← 用“做法B”的转换后链接；若用做法A（内置转换），这里可以直接填转换后的地址或机场原始 Clash 订阅
+    url: "https://<你的subconverter域名>/sub?target=clash&url=<已URL编码的原订阅或多订阅>&config=https://raw.githubusercontent.com/<yourname>/<yourrepo>/main/sr2clash.ini&udp=true&scv=true&sort=true&emoji=true"
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+
+proxy-groups:
+  - name: Default
+    type: select
+    use: [my-sub]
+    proxies: [DIRECT, REJECT]
+
+  - name: ChatGPT
+    type: select
+    use: [my-sub]
+    proxies: [美国节点, 新加坡节点, 香港节点, 台湾节点, 日本节点, 快速节点, Default]
+
+  - name: YouTube
+    type: select
+    use: [my-sub]
+    proxies: [香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点, Default]
+
+  - name: Netflix
+    type: select
+    use: [my-sub]
+    proxies: [香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点, Default]
+
+  - name: Disney+
+    type: select
+    use: [my-sub]
+    proxies: [香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点, Default]
+
+  - name: HBO
+    type: select
+    use: [my-sub]
+    proxies: [香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点, Default]
+
+  - name: TikTok
+    type: select
+    use: [my-sub]
+    proxies: [香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点, Default]
+
+  - name: Spotify
+    type: select
+    use: [my-sub]
+    proxies: [DIRECT, Default, 香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点]
+
+  - name: Telegram
+    type: select
+    use: [my-sub]
+    proxies: [香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点, Default]
+
+  - name: Twitter
+    type: select
+    use: [my-sub]
+    proxies: [香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点, Default]
+
+  - name: Facebook
+    type: select
+    use: [my-sub]
+    proxies: [香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点, Default]
+
+  - name: PayPal
+    type: select
+    use: [my-sub]
+    proxies: [DIRECT, Default, 香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点]
+
+  - name: Amazon
+    type: select
+    use: [my-sub]
+    proxies: [DIRECT, Default, 香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点]
+
+  - name: 苹果服务
+    type: select
+    use: [my-sub]
+    proxies: [DIRECT, Default, 香港节点]
+
+  - name: 谷歌服务
+    type: select
+    use: [my-sub]
+    proxies: [美国节点, Default, 香港节点]
+
+  - name: 微软服务
+    type: select
+    use: [my-sub]
+    proxies: [DIRECT, Default, 香港节点]
+
+  - name: 哔哩哔哩
+    type: select
+    use: [my-sub]
+    proxies: [DIRECT, Default, 香港节点, 台湾节点]
+
+  - name: 游戏平台
+    type: select
+    use: [my-sub]
+    proxies: [DIRECT, Default, 香港节点, 台湾节点, 日本节点, 新加坡节点, 快速节点, 美国节点]
+
+  - name: 巴姆哈特
+    type: select
+    use: [my-sub]
+    proxies: [台湾节点, 新加坡节点, 香港节点, Default]
+
+  - name: AdBlock
+    type: select
+    proxies: [REJECT]
+
+  # 地区分组（url-test 自动选优）
+  - name: 香港节点
+    type: url-test
+    use: [my-sub]
+    filter: "(?i)(HK|Hong|香港|深港|沪港|京港|港)"
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 台湾节点
+    type: url-test
+    use: [my-sub]
+    filter: "(?i)(TW|Taiwan|台湾|台北|台中|新北|彰化)"
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 日本节点
+    type: url-test
+    use: [my-sub]
+    filter: "(?i)(JP|Japan|日本|东京|大阪|京日|苏日|沪日|上日|川日|深日|广日)"
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 新加坡节点
+    type: url-test
+    use: [my-sub]
+    filter: "(?i)(SG|Sing|新加坡|狮城|沪新|京新|深新|杭新|广新)"
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 快速节点
+    type: url-test
+    use: [my-sub]
+    filter: "(?i)(AnyPath|虚通|BGP|LEGACY|CLOUDBLADES|直连中继)"
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 美国节点
+    type: url-test
+    use: [my-sub]
+    filter: "(?i)(US|USA|United|American|美国)"
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+rule-providers:
+  OpenAI:
+    type: http
+    behavior: domain
+    path: ./ruleset/OpenAI.list
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.list
+    interval: 86400
+
+  YouTube:
+    type: http
+    behavior: domain
+    path: ./ruleset/YouTube.list
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list
+    interval: 86400
+
+  Netflix:
+    type: http
+    behavior: domain
+    path: ./ruleset/Netflix.list
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list
+    interval: 86400
+
+  Disney:
+    type: http
+    behavior: domain
+    path: ./ruleset/Disney.list
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list
+    interval: 86400
+
+  China-Domain:
+    type: http
+    behavior: domain
+    path: ./ruleset/ChinaMax.list
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax.list
+    interval: 86400
+
+  AdBlock:
+    type: http
+    behavior: domain
+    path: ./ruleset/Advertising.list
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising.list
+    interval: 86400
+
+rules:
+  - RULE-SET,OpenAI,ChatGPT
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,Disney,Disney+
+  - RULE-SET,YouTube,YouTube
+  - RULE-SET,China-Domain,DIRECT
+  - RULE-SET,AdBlock,REJECT
+  - GEOIP,CN,DIRECT
+  - MATCH,Default
