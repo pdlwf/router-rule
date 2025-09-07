@@ -30,7 +30,7 @@ proxy-providers:
     type: http
     path: ./providers/proxy/my-sub.yaml
     # ← 用“做法B”的转换后链接；若用做法A（内置转换），这里可以直接填转换后的地址或机场原始 Clash 订阅
-    url: "https://<你的subconverter域名>/sub?target=clash&url=<已URL编码的原订阅或多订阅>&config=https://raw.githubusercontent.com/<yourname>/<yourrepo>/main/sr2clash.ini&udp=true&scv=true&sort=true&emoji=true"
+    url: "https://raw.githubusercontent.com/pdlwf/router-rule/refs/heads/main/Clash/sr2clash.ini"
     interval: 3600
     health-check:
       enable: true
