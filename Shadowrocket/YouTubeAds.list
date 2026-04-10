@@ -1,0 +1,14 @@
+# NAME: YouTubeAds
+# AUTHOR: Codex
+# UPDATED: 2026-04-10
+# DESCRIPTION: Conservative YouTube-related ad domains for Shadowrocket. Keep this list narrow to avoid breaking playback.
+DOMAIN,ads.youtube.com
+DOMAIN,googleads.g.doubleclick.net
+DOMAIN,pagead2.googlesyndication.com
+DOMAIN,partnerad.l.doubleclick.net
+DOMAIN,pubads.g.doubleclick.net
+DOMAIN,securepubads.g.doubleclick.net
+DOMAIN-SUFFIX,doubleclick.com
+DOMAIN-SUFFIX,doubleclick.net
+DOMAIN-SUFFIX,googleadservices.com
+DOMAIN-SUFFIX,googlesyndication.com
