@@ -230,7 +230,7 @@ proxy-groups:
   - name: AI节点-A
     type: url-test
     use: [sub-a]
-    filter: "((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*(?i)Gemini|(?i)Gemini.*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))"
+    filter: "((🇺🇸|美国).*(?i)Gemini|(?i)Gemini.*(🇺🇸|美国))"
     exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit)"
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -240,6 +240,30 @@ proxy-groups:
     use: [sub-b]
     filter: "((🇺🇸|美国).*((?i)\\b1x\\b|1倍|一倍|倍率1|1x倍率|1.0x)|((?i)\\b1x\\b|1倍|一倍|倍率1|1x倍率|1.0x).*(🇺🇸|美国))"
     exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit|(?i)\\b([2-9]|[1-9][0-9]+)x\\b|[2-9]倍|[1-9][0-9]+倍|[二三四五六七八九十]+倍)"
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 香港节点-A
+    type: fallback
+    proxies: [香港节点-A-优选, 香港节点-A-基础]
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 香港节点-A-优选
+    type: url-test
+    use: [sub-a]
+    filter: "((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*((?i)\\b([2-9]|[1-9][0-9]+)x\\b|[2-9]倍|[1-9][0-9]+倍|[二三四五六七八九十]+倍)|((?i)\\b([2-9]|[1-9][0-9]+)x\\b|[2-9]倍|[1-9][0-9]+倍|[二三四五六七八九十]+倍).*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))"
+    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit)"
+    tolerance: 100
+    timeout: 800
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 香港节点-A-基础
+    type: url-test
+    use: [sub-a]
+    filter: "(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b)"
+    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit)"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
@@ -254,13 +278,6 @@ proxy-groups:
     type: url-test
     use: [sub-b]
     filter: "(美国|🇺🇸|洛杉矶|(?i)\\bUS\\b|(?i)\\bUSA\\b|(?i)America|(?i)United[ _-]?States)"
-    url: http://www.gstatic.com/generate_204
-    interval: 600
-
-  - name: 香港节点-A
-    type: url-test
-    use: [sub-a]
-    filter: "(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b)"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
