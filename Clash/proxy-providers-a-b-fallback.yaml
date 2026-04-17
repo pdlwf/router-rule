@@ -252,7 +252,7 @@ proxy-groups:
   - name: 香港节点-A-优选
     type: url-test
     use: [sub-a]
-    filter: "((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*((?i)\\b([1-9]|[1-9][0-9]+)(x|倍)\\b|[1-9]倍|[1-9][0-9]+倍|[一二三四五六七八九十百]+倍)|((?i)\\b([1-9]|[1-9][0-9]+)(x|倍)\\b|[1-9]倍|[1-9][0-9]+倍|[一二三四五六七八九十百]+倍).*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))"
+    filter: "(((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*((?i)\\b([1-9]|[1-9][0-9]+)(x|倍)\\b|[1-9]倍|[1-9][0-9]+倍|[一二三四五六七八九十百]+倍)|((?i)\\b([1-9]|[1-9][0-9]+)(x|倍)\\b|[1-9]倍|[1-9][0-9]+倍|[一二三四五六七八九十百]+倍).*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))|(?i)VIP)"
     exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit)"
     tolerance: 100
     timeout: 800
@@ -271,6 +271,7 @@ proxy-groups:
     type: url-test
     use: [sub-a]
     filter: "(美国|🇺🇸|洛杉矶|(?i)\\bUS\\b|(?i)\\bUSA\\b|(?i)America|(?i)United[ _-]?States)"
+    exclude-filter: "((?i)Gemini|低延迟|(?i)low[ _-]?latency|游戏|(?i)game)"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
@@ -291,7 +292,7 @@ proxy-groups:
   - name: 香港游戏-A
     type: url-test
     use: [sub-a]
-    filter: "((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*((?i)game|游戏)|((?i)game|游戏).*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))"
+    filter: "((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*((?i)game|游戏|特殊优化)|((?i)game|游戏|特殊优化).*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))"
     exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit)"
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -313,7 +314,7 @@ proxy-groups:
   - name: 美国-游戏-A
     type: url-test
     use: [sub-a]
-    filter: "((美国|🇺🇸).*((?i)game|游戏)|((?i)game|游戏).*(美国|🇺🇸))"
+    filter: "((美国|🇺🇸).*((?i)game|游戏|low[ _-]?latency|低延迟)|((?i)game|游戏|low[ _-]?latency|低延迟).*(美国|🇺🇸))"
     exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit)"
     url: http://www.gstatic.com/generate_204
     interval: 600
