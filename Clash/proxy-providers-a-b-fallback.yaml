@@ -3,6 +3,7 @@
 # 1. 把 sub-a / sub-b 的 url 替换成你的两个 Clash 订阅地址
 # 2. 在 OpenClash 中直接导入这个 YAML，而不是再走 Config.ini 在线转换模板
 # 3. 每个地区先从 A 里自动测速选优；如果 A 该地区全失效，再自动切到 B
+# 4. 这份配置尽量复用了当前 Config.ini 的分流逻辑，只是把底层节点来源改成了双 provider
 
 mixed-port: 7890
 allow-lan: true
@@ -66,104 +67,117 @@ proxy-groups:
 
   - name: Google
     type: select
-    proxies: [美国节点, 新加坡节点, 香港节点, 手动切换]
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
 
   - name: GoogleVoice
     type: select
-    proxies: [美国节点, 新加坡节点, 香港节点, 手动切换]
-
-  - name: GoogleFCM
-    type: select
-    proxies: [美国节点, 新加坡节点, 香港节点, 手动切换]
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
 
   - name: YouTube
     type: select
-    proxies: [美国节点, 新加坡节点, 香港节点, 手动切换]
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
 
   - name: YouTubeMusic
     type: select
-    proxies: [美国节点, 新加坡节点, 香港节点, 手动切换]
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
 
-  - name: Github
+  - name: GoogleFCM
     type: select
-    proxies: [美国节点, 新加坡节点, 香港节点, 手动切换]
-
-  - name: Twitter
-    type: select
-    proxies: [美国节点, 新加坡节点, 香港节点, 手动切换]
-
-  - name: Telegram
-    type: select
-    proxies: [美国节点, 新加坡节点, 香港节点, 手动切换]
-
-  - name: Amazon
-    type: select
-    proxies: [美国节点, 新加坡节点, 香港节点, 手动切换]
-
-  - name: PayPal
-    type: select
-    proxies: [DIRECT, 美国节点, 新加坡节点, 香港节点, 手动切换]
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
 
   - name: 苹果服务
     type: select
-    proxies: [DIRECT, 香港节点, 美国节点, 新加坡节点]
+    proxies: [DIRECT, 美国节点, 新加坡节点, 香港节点]
+
+  - name: Amazon
+    type: select
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+
+  - name: Github
+    type: select
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+
+  - name: OpenAI
+    type: select
+    proxies: [AI节点, 手动切换, 美国节点, 新加坡节点, 香港节点]
+
+  - name: Claude
+    type: select
+    proxies: [AI节点, 手动切换, 美国节点, 新加坡节点, 香港节点]
+
+  - name: Gemini
+    type: select
+    proxies: [AI节点, 手动切换, 美国节点, 新加坡节点, 香港节点]
+
+  - name: 巴姆哈特
+    type: select
+    proxies: [手动切换, 新加坡节点, 香港节点]
+
+  - name: Twitter
+    type: select
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+
+  - name: Telegram
+    type: select
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+
+  - name: PayPal
+    type: select
+    proxies: [美国节点, 新加坡节点, 香港节点]
+
+  - name: Netflix
+    type: select
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+
+  - name: Nintendo
+    type: select
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
 
   - name: 微软服务
     type: select
-    proxies: [DIRECT, 香港节点, 美国节点, 新加坡节点, 手动切换]
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点, DIRECT]
 
   - name: 哔哩哔哩
     type: select
-    proxies: [DIRECT, 香港节点, 手动切换]
+    proxies: [DIRECT, 手动切换, 美国节点, 新加坡节点, 香港节点]
 
   - name: Bobby
     type: select
     proxies: [美国节点, 新加坡节点, 香港节点, 手动切换]
 
-  - name: OpenAI
-    type: select
-    proxies: [AI节点, 美国节点, 新加坡节点, 香港节点, 手动切换]
-
-  - name: Claude
-    type: select
-    proxies: [AI节点, 美国节点, 新加坡节点, 香港节点, 手动切换]
-
-  - name: Gemini
-    type: select
-    proxies: [AI节点, 美国节点, 新加坡节点, 香港节点, 手动切换]
-
   - name: apiopenai
     type: select
-    proxies: [AI节点, 美国节点, 新加坡节点, 香港节点, 手动切换]
+    proxies: [AI节点, 手动切换, 美国节点, 新加坡节点, 香港节点]
 
   - name: HoYoGames
     type: select
-    proxies: [DIRECT, 香港节点, 新加坡节点, 美国节点, 手动切换]
+    proxies: [DIRECT, 手动切换, 美国节点, 新加坡节点, 香港节点]
 
   - name: 游戏平台
     type: select
-    proxies: [DIRECT, 香港节点, 新加坡节点, 美国节点, 手动切换]
+    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点, DIRECT]
 
   - name: 漏网之鱼
     type: select
     proxies: [手动切换, 美国节点, 新加坡节点, 香港节点, DIRECT]
 
+  # 先选带 AI 标记的美国节点；都失效时再退回普通美国/新加坡/香港
   - name: AI节点
     type: fallback
-    proxies: [美国节点, 新加坡节点, 香港节点]
+    proxies: [AI节点-A, AI节点-B, 美国节点, 新加坡节点, 香港节点]
     url: http://www.gstatic.com/generate_204
     interval: 600
 
   # 每个地区先用 A 订阅测速，A 该地区全失效时自动切到 B
-  - name: 香港节点
-    type: fallback
-    proxies: [香港节点-A, 香港节点-B]
-    url: http://www.gstatic.com/generate_204
-    interval: 600
-
   - name: 美国节点
     type: fallback
     proxies: [美国节点-A, 美国节点-B]
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 香港节点
+    type: fallback
+    proxies: [香港节点-A, 香港节点-B]
     url: http://www.gstatic.com/generate_204
     interval: 600
 
@@ -173,10 +187,17 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
 
-  - name: 香港节点-A
+  - name: AI节点-A
     type: url-test
     use: [sub-a]
-    filter: "(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b)"
+    filter: "((🇺🇸|美国).*(?i)Gemini|(?i)Gemini.*(🇺🇸|美国))"
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: AI节点-B
+    type: url-test
+    use: [sub-b]
+    filter: "((🇺🇸|美国).*(?i)Gemini|(?i)Gemini.*(🇺🇸|美国))"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
@@ -187,10 +208,17 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
 
-  - name: 新加坡节点-A
+  - name: 美国节点-B
+    type: url-test
+    use: [sub-b]
+    filter: "(美国|🇺🇸|洛杉矶|(?i)\\bUS\\b|(?i)\\bUSA\\b|(?i)America|(?i)United[ _-]?States)"
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 香港节点-A
     type: url-test
     use: [sub-a]
-    filter: "(新加坡|🇸🇬|狮城|(?i)\\bSG\\b|(?i)Singapore)"
+    filter: "(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b)"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
@@ -201,10 +229,10 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
 
-  - name: 美国节点-B
+  - name: 新加坡节点-A
     type: url-test
-    use: [sub-b]
-    filter: "(美国|🇺🇸|洛杉矶|(?i)\\bUS\\b|(?i)\\bUSA\\b|(?i)America|(?i)United[ _-]?States)"
+    use: [sub-a]
+    filter: "(新加坡|🇸🇬|狮城|(?i)\\bSG\\b|(?i)Singapore)"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
@@ -251,6 +279,13 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml
     interval: 86400
 
+  巴姆哈特:
+    type: http
+    behavior: classical
+    path: ./ruleset/Bahamut.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bahamut/Bahamut.yaml
+    interval: 86400
+
   Twitter:
     type: http
     behavior: classical
@@ -284,6 +319,20 @@ rule-providers:
     behavior: classical
     path: ./ruleset/PayPal.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.yaml
+    interval: 86400
+
+  Nintendo:
+    type: http
+    behavior: classical
+    path: ./ruleset/Nintendo.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.yaml
+    interval: 86400
+
+  Netflix:
+    type: http
+    behavior: classical
+    path: ./ruleset/Netflix.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix_Classical.yaml
     interval: 86400
 
   YouTubeMusic:
@@ -376,16 +425,19 @@ rules:
   - RULE-SET,OpenAI,OpenAI
   - RULE-SET,Claude,Claude
   - RULE-SET,Gemini,Gemini
-  - RULE-SET,YouTubeMusic,YouTubeMusic
-  - RULE-SET,YouTube,YouTube
-  - RULE-SET,GoogleVoice,GoogleVoice
-  - RULE-SET,GoogleFCM,GoogleFCM
-  - RULE-SET,Google,Google
+  - RULE-SET,巴姆哈特,巴姆哈特
   - RULE-SET,Twitter,Twitter
   - RULE-SET,Telegram,Telegram
   - RULE-SET,Amazon,Amazon
   - RULE-SET,Github,Github
   - RULE-SET,PayPal,PayPal
+  - RULE-SET,Nintendo,Nintendo
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,YouTubeMusic,YouTubeMusic
+  - RULE-SET,YouTube,YouTube
+  - RULE-SET,GoogleVoice,GoogleVoice
+  - RULE-SET,GoogleFCM,GoogleFCM
+  - RULE-SET,Google,Google
   - RULE-SET,苹果服务,苹果服务
   - RULE-SET,微软服务,微软服务
   - RULE-SET,哔哩哔哩,哔哩哔哩
