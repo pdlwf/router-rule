@@ -277,7 +277,8 @@ proxy-groups:
   - name: 美国节点-B
     type: url-test
     use: [sub-b]
-    filter: "(美国|🇺🇸|洛杉矶|(?i)\\bUS\\b|(?i)\\bUSA\\b|(?i)America|(?i)United[ _-]?States)"
+    filter: "(美国|🇺🇸)"
+    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit|(?i)\\b([2-9]|[1-9][0-9]+)x\\b|[2-9]倍|[1-9][0-9]+倍|[二三四五六七八九十]+倍)"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
