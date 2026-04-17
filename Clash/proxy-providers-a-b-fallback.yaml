@@ -285,41 +285,19 @@ proxy-groups:
 
   - name: 香港游戏
     type: fallback
-    proxies: [香港游戏-A, 香港游戏-B]
-    url: http://www.gstatic.com/generate_204
-    interval: 600
-
-  - name: 香港游戏-A
-    type: url-test
-    use: [sub-a]
-    filter: "((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*((?i)game|游戏|特殊优化|VIP)|((?i)game|游戏|特殊优化|VIP).*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))"
-    url: http://www.gstatic.com/generate_204
-    interval: 600
-
-  - name: 香港游戏-B
-    type: url-test
-    use: [sub-b]
-    filter: "((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*((?i)game|游戏)|((?i)game|游戏).*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))"
-    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit|(?i)\\b([2-9]|[1-9][0-9]+)(x|倍)\\b|[2-9]倍|[1-9][0-9]+倍|[二三四五六七八九十百]+倍)"
+    proxies: [香港节点-A-优选, 香港节点-A-基础, 香港节点-B]
     url: http://www.gstatic.com/generate_204
     interval: 600
 
   - name: 美国-游戏
     type: fallback
-    proxies: [美国-游戏-A, 美国-游戏-B]
+    proxies: [美国-游戏-A, 美国节点-B]
     url: http://www.gstatic.com/generate_204
     interval: 600
 
   - name: 美国-游戏-A
     type: url-test
     use: [sub-a]
-    filter: "((美国|🇺🇸).*((?i)game|游戏|low[ _-]?latency|低延迟)|((?i)game|游戏|low[ _-]?latency|低延迟).*(美国|🇺🇸))"
-    url: http://www.gstatic.com/generate_204
-    interval: 600
-
-  - name: 美国-游戏-B
-    type: url-test
-    use: [sub-b]
     filter: "((美国|🇺🇸).*((?i)game|游戏|low[ _-]?latency|低延迟)|((?i)game|游戏|low[ _-]?latency|低延迟).*(美国|🇺🇸))"
     url: http://www.gstatic.com/generate_204
     interval: 600
