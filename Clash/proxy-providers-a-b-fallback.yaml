@@ -237,7 +237,7 @@ proxy-groups:
   - name: AI节点-B
     type: url-test
     use: [sub-b]
-    filter: "(((🇺🇸|美国).*(?i)Gemini|(?i)Gemini.*(🇺🇸|美国)).*((?i)\\b1x\\b|1倍|一倍|倍率1|1x倍率|1.0x)|((?i)\\b1x\\b|1倍|一倍|倍率1|1x倍率|1.0x).*((🇺🇸|美国).*(?i)Gemini|(?i)Gemini.*(🇺🇸|美国)))"
+    filter: "((🇺🇸|美国).*((?i)\\b1x\\b|1倍|一倍|倍率1|1x倍率|1.0x)|((?i)\\b1x\\b|1倍|一倍|倍率1|1x倍率|1.0x).*(🇺🇸|美国))"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
