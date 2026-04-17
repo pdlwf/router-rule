@@ -292,8 +292,7 @@ proxy-groups:
   - name: 香港游戏-A
     type: url-test
     use: [sub-a]
-    filter: "((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*((?i)game|游戏|特殊优化)|((?i)game|游戏|特殊优化).*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))"
-    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit)"
+    filter: "((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*((?i)game|游戏|特殊优化|VIP)|((?i)game|游戏|特殊优化|VIP).*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
@@ -315,15 +314,13 @@ proxy-groups:
     type: url-test
     use: [sub-a]
     filter: "((美国|🇺🇸).*((?i)game|游戏|low[ _-]?latency|低延迟)|((?i)game|游戏|low[ _-]?latency|低延迟).*(美国|🇺🇸))"
-    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit)"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
   - name: 美国-游戏-B
     type: url-test
     use: [sub-b]
-    filter: "((美国|🇺🇸).*((?i)game|游戏)|((?i)game|游戏).*(美国|🇺🇸))"
-    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit|(?i)\\b([2-9]|[1-9][0-9]+)(x|倍)\\b|[2-9]倍|[1-9][0-9]+倍|[二三四五六七八九十百]+倍)"
+    filter: "((美国|🇺🇸).*((?i)game|游戏|low[ _-]?latency|低延迟)|((?i)game|游戏|low[ _-]?latency|低延迟).*(美国|🇺🇸))"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
