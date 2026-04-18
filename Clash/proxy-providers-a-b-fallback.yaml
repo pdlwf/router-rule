@@ -239,7 +239,7 @@ proxy-groups:
     type: url-test
     use: [sub-b]
     filter: "((🇺🇸|美国).*((?i)\\b1x\\b|1倍|一倍|倍率1|1x倍率|1.0x)|((?i)\\b1x\\b|1倍|一倍|倍率1|1x倍率|1.0x).*(🇺🇸|美国))"
-    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit|(?i)([2-9]|[1-9][0-9]+)\\s*(x|倍)|[2-9]倍|[1-9][0-9]+倍|[二三四五六七八九十百]+倍)"
+    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit|(?i)([2-9]|[1-9][0-9]+)\\s*(x|倍)|[二三四五六七八九十百]+倍)"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
@@ -279,7 +279,7 @@ proxy-groups:
     type: url-test
     use: [sub-b]
     filter: "(美国|🇺🇸)"
-    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit|(?i)([2-9]|[1-9][0-9]+)\\s*(x|倍)|[2-9]倍|[1-9][0-9]+倍|[二三四五六七八九十百]+倍)"
+    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit|(?i)([2-9]|[1-9][0-9]+)\\s*(x|倍)|[二三四五六七八九十百]+倍)"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
