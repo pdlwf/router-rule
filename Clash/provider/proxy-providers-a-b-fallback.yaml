@@ -345,14 +345,14 @@ rule-providers:
     type: http
     behavior: classical
     path: ./ruleset/Bobby.yaml
-    url: https://raw.githubusercontent.com/pdlwf/router-rule/main/Clash/Rule/bobby_customize.yaml
+    url: https://raw.githubusercontent.com/pdlwf/router-rule/main/Clash/shared/Rule/bobby_customize.yaml
     interval: 86400
 
   apiopenai:
     type: http
     behavior: classical
     path: ./ruleset/apiopenai.yaml
-    url: https://raw.githubusercontent.com/pdlwf/router-rule/main/Clash/Rule/platform-openai.yaml
+    url: https://raw.githubusercontent.com/pdlwf/router-rule/main/Clash/shared/Rule/platform-openai.yaml
     interval: 86400
 
   OpenAI:
