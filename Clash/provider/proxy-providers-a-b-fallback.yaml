@@ -137,7 +137,7 @@ proxy-groups:
 
   - name: Claude
     type: select
-    proxies: [AI节点, 手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [美国节点-B, 手动切换, AI节点, 美国节点, 新加坡节点, 香港节点]
 
   - name: Gemini
     type: select
