@@ -89,11 +89,11 @@ proxy-providers:
 proxy-groups:
   - name: 手动切换
     type: select
-    proxies: [美国节点, 新加坡节点, 香港节点, DIRECT, REJECT]
+    proxies: [美国节点, 新加坡节点, 香港节点, 印度节点, 土耳其节点, DIRECT, REJECT]
 
   - name: 国外网站
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [美国节点-A, 美国节点, 手动切换, 新加坡节点, 香港节点]
 
   - name: 国内网站
     type: select
@@ -101,35 +101,35 @@ proxy-groups:
 
   - name: Google
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [香港节点, 手动切换, 美国节点, 新加坡节点]
 
   - name: GoogleVoice
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [香港节点, 手动切换, 美国节点, 新加坡节点]
 
   - name: YouTube
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [香港节点, 手动切换, 美国节点, 印度节点, 土耳其节点, 新加坡节点]
 
   - name: YouTubeMusic
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [香港节点, 手动切换, 美国节点, 新加坡节点]
 
   - name: GoogleFCM
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [香港节点, 手动切换, 美国节点, 新加坡节点]
 
   - name: 苹果服务
     type: select
-    proxies: [DIRECT, 美国节点, 新加坡节点, 香港节点]
+    proxies: [香港节点, DIRECT, 美国节点, 印度节点, 土耳其节点, 新加坡节点]
 
   - name: Amazon
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [美国节点, 手动切换, 新加坡节点, 香港节点]
 
   - name: Github
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [香港节点, 手动切换, 美国节点, 新加坡节点]
 
   - name: OpenAI
     type: select
@@ -137,7 +137,7 @@ proxy-groups:
 
   - name: Claude
     type: select
-    proxies: [美国节点-B, 手动切换, AI节点, 美国节点, 新加坡节点, 香港节点]
+    proxies: [AI节点, 手动切换, 美国节点-B, 美国节点, 新加坡节点, 香港节点]
 
   - name: Gemini
     type: select
@@ -149,11 +149,11 @@ proxy-groups:
 
   - name: Twitter
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [香港节点, 手动切换, 美国节点, 新加坡节点]
 
   - name: Telegram
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [香港节点, 手动切换, 美国节点, 新加坡节点]
 
   - name: PayPal
     type: select
@@ -161,15 +161,15 @@ proxy-groups:
 
   - name: Netflix
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [新加坡节点, 手动切换, 美国节点, 香港节点]
 
   - name: Nintendo
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [美国节点, 手动切换, 新加坡节点, 香港节点]
 
   - name: 微软服务
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点, DIRECT]
+    proxies: [香港节点, 手动切换, 美国节点, 新加坡节点, DIRECT]
 
   - name: 哔哩哔哩
     type: select
@@ -185,7 +185,7 @@ proxy-groups:
 
   - name: HoYoGames
     type: select
-    proxies: [DIRECT, 手动切换, 美国节点, 新加坡节点, 香港节点]
+    proxies: [香港节点, DIRECT, 手动切换, 美国节点, 新加坡节点]
 
   - name: 游戏平台
     type: select
@@ -193,7 +193,7 @@ proxy-groups:
 
   - name: 漏网之鱼
     type: select
-    proxies: [手动切换, 美国节点, 新加坡节点, 香港节点, DIRECT]
+    proxies: [美国节点, 手动切换, 新加坡节点, 香港节点, DIRECT]
 
   # 先选带 AI 标记的美国节点；都失效时再退回普通美国/新加坡/香港
   - name: AI节点
@@ -218,6 +218,19 @@ proxy-groups:
   - name: 新加坡节点
     type: fallback
     proxies: [新加坡节点-A, 新加坡节点-B]
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 印度节点
+    type: fallback
+    proxies: [印度节点-A, 印度节点-B]
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 土耳其节点
+    type: url-test
+    use: [sub-a, sub-b]
+    filter: "(🇹🇷|土耳其|伊斯坦布尔|安卡拉|(?i)\\bTR\\b|(?i)Turkey|(?i)Türkiye|(?i)Istanbul|(?i)Ankara)"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
@@ -252,7 +265,7 @@ proxy-groups:
   - name: 香港节点-A-优选
     type: url-test
     use: [sub-a]
-    filter: "(((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*((?i)\\b([1-9]|[1-9][0-9]+)(x|倍)\\b|[1-9]倍|[1-9][0-9]+倍|[一二三四五六七八九十百]+倍)|((?i)\\b([1-9]|[1-9][0-9]+)(x|倍)\\b|[1-9]倍|[1-9][0-9]+倍|[一二三四五六七八九十百]+倍).*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))|(?i)VIP)"
+    filter: "((香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b).*((^|[^0-9.])5倍流量计费|VIP6)|((^|[^0-9.])5倍流量计费|VIP6).*(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b))"
     exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit)"
     tolerance: 100
     timeout: 800
@@ -263,15 +276,14 @@ proxy-groups:
     type: url-test
     use: [sub-a]
     filter: "(香港|🇭🇰|(?i)\\bHK\\b|(?i)Hong[ _-]?Kong|(?i)\\bHKG\\b)"
-    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit|(?i)\\b([1-9]|[1-9][0-9]+)(x|倍)\\b|[1-9]倍|[1-9][0-9]+倍|[一二三四五六七八九十百]+倍)"
+    exclude-filter: "(限速|[Rr]ate[ -]?[Ll]imit|[Vv][Ii][Pp]|(^|[^0-9.])([1-9]|[1-9][0-9]+)[xX]\\b|(^|[^0-9.])([1-9]|[1-9][0-9]+)倍|[一二三四五六七八九十百]+倍)"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
   - name: 美国节点-A
     type: url-test
     use: [sub-a]
-    filter: "(美国|🇺🇸|洛杉矶|(?i)\\bUS\\b|(?i)\\bUSA\\b|(?i)America|(?i)United[ _-]?States)"
-    exclude-filter: "((?i)Gemini|低延迟|(?i)low[ _-]?latency|游戏|(?i)game)"
+    filter: "((美国|🇺🇸|凤凰城|洛杉矶|西雅图|芝加哥|纽约|沪美|美|(?i)\\bUS\\b|(?i)\\bUSA\\b|(?i)America|(?i)United[ _-]?States).*((?i)Gemini|(?i)Claude|(?i)OpenAI|(?i)ChatGPT|\\bAI\\b)|((?i)Gemini|(?i)Claude|(?i)OpenAI|(?i)ChatGPT|\\bAI\\b).*(美国|🇺🇸|凤凰城|洛杉矶|西雅图|芝加哥|纽约|沪美|美|(?i)\\bUS\\b|(?i)\\bUSA\\b|(?i)America|(?i)United[ _-]?States))"
     url: http://www.gstatic.com/generate_204
     interval: 600
 
@@ -321,6 +333,21 @@ proxy-groups:
     type: url-test
     use: [sub-b]
     filter: "(新加坡|🇸🇬|狮城|(?i)\\bSG\\b|(?i)Singapore)"
+    exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit|(?i)\\b([2-9]|[1-9][0-9]+)(x|倍)\\b|[2-9]倍|[1-9][0-9]+倍|[二三四五六七八九十百]+倍)"
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 印度节点-A
+    type: url-test
+    use: [sub-a]
+    filter: "(🇮🇳|印度|孟买|德里|班加罗尔|钦奈|(?i)\\bIN\\b|(?i)India|(?i)Mumbai|(?i)Delhi|(?i)Bangalore|(?i)Chennai)"
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+
+  - name: 印度节点-B
+    type: url-test
+    use: [sub-b]
+    filter: "(🇮🇳|印度|孟买|德里|班加罗尔|钦奈|(?i)\\bIN\\b|(?i)India|(?i)Mumbai|(?i)Delhi|(?i)Bangalore|(?i)Chennai)"
     exclude-filter: "(限速|(?i)限速|(?i)rate[ -]?limit|(?i)\\b([2-9]|[1-9][0-9]+)(x|倍)\\b|[2-9]倍|[1-9][0-9]+倍|[二三四五六七八九十百]+倍)"
     url: http://www.gstatic.com/generate_204
     interval: 600
